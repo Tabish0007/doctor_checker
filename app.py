@@ -1,13 +1,12 @@
+import openai
 import streamlit as st
 import os
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage, AIMessage
 
-# Set up OpenAI API key
-openai.api_key = os.environ.get("OPENAI_API_KEY")
-
-# Initialize ChatOpenAI model
-chat = ChatOpenAI(temperature=0)
+# **Replace 'YOUR_ACTUAL_API_KEY' with your real API key**
+# Providing API key directly using named parameter
+chat = ChatOpenAI(openai_api_key="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", temperature=0)
 
 def get_doctor_response(query):
     messages = [
